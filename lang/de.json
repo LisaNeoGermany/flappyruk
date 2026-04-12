@@ -1,0 +1,20 @@
+{
+  "FLAPPYRUK": {
+    "Title": "FlappyRuk",
+    "StartGame": "Los fliegen",
+    "ClearLeaderboard": "Bestenliste löschen",
+    "Leaderboard": "Bestenliste",
+    "NoEntries": "Noch keine Einträge",
+    "ConfirmClear": "Soll die Bestenliste wirklich gelöscht werden?",
+    "ConfirmClearTitle": "Bestenliste löschen",
+    "Delete": "Löschen",
+    "Cancel": "Abbrechen",
+    "LeaderboardCleared": "Bestenliste geleert.",
+    "GMOnly": "Nur GMs können das.",
+    "GameOver": "Game Over",
+    "Score": "Punkte",
+    "Best": "Beste",
+    "ClickToRestart": "Klick zum Neustart",
+    "ClickToStart": "Klicke um zu starten"
+  }
+}

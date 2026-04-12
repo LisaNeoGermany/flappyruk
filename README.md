@@ -1,0 +1,1 @@
+FlappyRuk v12 mit Sora‑Sprite (3×1, 48px). Sprite liegt unter game/assets/sora_crow_3x1_48.png. Musik leise, Fenster 520×760.

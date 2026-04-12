@@ -1,0 +1,20 @@
+{
+  "FLAPPYRUK": {
+    "Title": "FlappyRuk",
+    "StartGame": "Start Flying",
+    "ClearLeaderboard": "Clear Leaderboard",
+    "Leaderboard": "Leaderboard",
+    "NoEntries": "No entries yet",
+    "ConfirmClear": "Do you really want to clear the leaderboard?",
+    "ConfirmClearTitle": "Clear Leaderboard",
+    "Delete": "Delete",
+    "Cancel": "Cancel",
+    "LeaderboardCleared": "Leaderboard cleared.",
+    "GMOnly": "Only GMs can do this.",
+    "GameOver": "Game Over",
+    "Score": "Score",
+    "Best": "Best",
+    "ClickToRestart": "Click to restart",
+    "ClickToStart": "Click to start"
+  }
+}

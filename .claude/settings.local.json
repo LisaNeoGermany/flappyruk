@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /b \"Y:\\game_dimensionarium\\Data\\modules\\flappyruk\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,0 +1,193 @@
+<div class="fruk" style="padding:0;margin:0;height:100%;display:flex;flex-direction:column;">
+  <style>
+    .fruk .leaderboard {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-height: 200px;
+      overflow-y: auto;
+      padding: 8px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    .fruk .cc-row {
+      display: grid;
+      grid-template-columns: 28px 36px 1fr 60px;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 10px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.1s;
+    }
+    .fruk .cc-row:hover {
+      transform: translateX(4px);
+    }
+    .fruk .cc-row:first-child {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: #333;
+    }
+    .fruk .cc-row:nth-child(2) {
+      background: linear-gradient(135deg, #E8E8E8 0%, #C0C0C0 100%);
+      color: #333;
+    }
+    .fruk .cc-row:nth-child(3) {
+      background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%);
+      color: #fff;
+    }
+    .fruk .cc-rank {
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    .fruk .cc-avatar {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .fruk .cc-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+    .fruk .cc-score {
+      text-align: right;
+      font-weight: 700;
+      font-size: 1.1em;
+    }
+    .fruk .cc-empty {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.6;
+      font-style: italic;
+    }
+    .fruk .start-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex: 1 1 auto;
+      min-height: 400px;
+      background: linear-gradient(180deg, #87CEEB 0%, #4682B4 50%, #2F4F4F 100%);
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .fruk .start-screen::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: #79c257;
+      border-top: 4px solid #6ab14a;
+    }
+    .fruk .start-screen h2 {
+      margin: 0;
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      letter-spacing: 2px;
+      z-index: 1;
+    }
+    .fruk .start-screen .crow-icon {
+      font-size: 4em;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: float 2s ease-in-out infinite;
+      z-index: 1;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .fruk .start-screen .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1;
+    }
+    .fruk .start-screen button {
+      padding: 14px 32px;
+      font-size: 1.1em;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .fruk .start-screen button:hover {
+      transform: scale(1.05) translateY(-2px);
+    }
+    .fruk .start-screen button:active {
+      transform: scale(0.98);
+    }
+    .fruk .start-screen .start-btn {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    }
+    .fruk .start-screen .start-btn:hover {
+      box-shadow: 0 6px 16px rgba(76, 175, 80, 0.6);
+    }
+    .fruk .start-screen .clear-btn {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+      font-size: 0.9em;
+      padding: 10px 24px;
+    }
+    .fruk .start-screen .clear-btn:hover {
+      box-shadow: 0 6px 16px rgba(244, 67, 54, 0.6);
+    }
+    .fruk .leaderboard-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0 4px 0;
+      padding: 0 4px;
+    }
+    .fruk .leaderboard-header h3 {
+      margin: 0;
+      font-size: 1.1em;
+    }
+    .fruk .leaderboard-header i {
+      color: #FFD700;
+    }
+  </style>
+  {{#if gameStarted}}
+    <iframe src="modules/flappyruk/game/index.html{{query}}" style="border:0;flex:1 1 auto;width:100%;height:100%;" allow="autoplay" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-popups allow-forms"></iframe>
+  {{else}}
+    <div class="start-screen">
+      <i class="fas fa-crow crow-icon"></i>
+      <h2>FlappyRuk</h2>
+      <div class="buttons">
+        <button type="button" class="start-btn" data-action="startGame">
+          <i class="fas fa-play"></i> {{localize "FLAPPYRUK.StartGame"}}
+        </button>
+        {{#if isGM}}
+          <button type="button" class="clear-btn" data-action="clearLeaderboard">
+            <i class="fas fa-trash-alt"></i> {{localize "FLAPPYRUK.ClearLeaderboard"}}
+          </button>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+  <div class="leaderboard-header">
+    <i class="fas fa-trophy"></i>
+    <h3>{{localize "FLAPPYRUK.Leaderboard"}}</h3>
+  </div>
+  <div id="fruk-leaderboard" class="leaderboard"></div>
+</div>

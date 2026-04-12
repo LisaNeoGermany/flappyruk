@@ -1,0 +1,34 @@
+{
+  "id": "flappyruk",
+  "title": "FlappyRuk Minigame",
+  "description": "FlappyRuk mit Bestenliste (weltweit), Tokenflügel, Musik.",
+  "version": "2.2.4",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "14"
+  },
+  "authors": [
+    {
+      "name": "ChatGPT"
+    }
+  ],
+  "esmodules": [
+    "scripts/main.js",
+    "scripts/flappyruk.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "de",
+      "name": "Deutsch",
+      "path": "lang/de.json"
+    }
+  ],
+  "readme": "README.md",
+  "license": "LICENSE",
+  "changelog": "Token klarer (runde Maske + Outline). Hübschere weiße Flügel mit Feder-Lobes und Animation."
+}
