@@ -9,7 +9,12 @@
   },
   "authors": [
     {
-      "name": "ChatGPT"
+      "name": "ChatGPT",
+      "flags": {}
+    },
+    {
+      "name": "Dimensionarium",
+      "flags": {}
     }
   ],
   "esmodules": [
@@ -20,12 +25,14 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     },
     {
       "lang": "de",
       "name": "Deutsch",
-      "path": "lang/de.json"
+      "path": "lang/de.json",
+      "flags": {}
     }
   ],
   "readme": "README.md",
@@ -33,5 +40,6 @@
   "changelog": "Token klarer (runde Maske + Outline). Hübschere weiße Flügel mit Feder-Lobes und Animation.",
   "url": "https://github.com/LisaNeoGermany/flappyruk",
   "manifest": "https://github.com/LisaNeoGermany/flappyruk/releases/latest/download/module.json",
-  "download": "https://github.com/LisaNeoGermany/flappyruk/releases/latest/download/flappyruk.zip"
+  "download": "https://github.com/LisaNeoGermany/flappyruk/releases/latest/download/flappyruk.zip",
+  "flags": {}
 }
